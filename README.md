@@ -45,4 +45,4 @@ http://127.0.0.1:8000/api/v1/posts/
  ```
 ### Автор
 Варвара
-varvara.kireeva@gmail.com
+e-mail: [varvara.kireeva@gmail.com]
