@@ -4,36 +4,40 @@ from rest_framework.relations import SlugRelatedField
 
 from posts.models import Comment, Post, Follow, Group, User
 
+
 class CommentSerializer(serializers.ModelSerializer):
     author = serializers.SlugRelatedField(
         read_only=True, slug_field='username'
     )
     post = serializers.PrimaryKeyRelatedField(read_only=True)
 
-
-class PostSerializer(serializers.ModelSerializer):
-    author = SlugRelatedField(slug_field='username', read_only=True)
-    comments = CommentSerializer(many=True, required=False)
-    
-    class Meta:
-        fields = '__all__'
-        model = Post
-
     class Meta:
         fields = '__all__'
         model = Comment
 
-class UserSerializer(serializers.ModelSerializer):
+
+class PostSerializer(serializers.ModelSerializer):
+    author = SlugRelatedField(slug_field='username', read_only=True)
+    comments = CommentSerializer
 
     class Meta:
         fields = '__all__'
+        model = Post
+
+
+class UserSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        fields = ('id', 'username', 'first_name', 'last_name',)
         model = User
+
 
 class GroupSerializer(serializers.ModelSerializer):
 
     class Meta:
         fields = '__all__'
         model = Group
+
 
 class FollowSerializer(serializers.ModelSerializer):
     user = serializers.SlugRelatedField(
@@ -49,7 +53,7 @@ class FollowSerializer(serializers.ModelSerializer):
         follower = self.context['request'].user
         following = data['following']
 
-        if Follow.objectsfilter(user=follower, following=following).exists():
+        if Follow.objects.filter(user=follower, following=following).exists():
             raise serializers.ValidationError(
                 'Вы уже подписаны на этого автора.'
             )
