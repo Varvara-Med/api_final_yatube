@@ -1,12 +1,12 @@
-from posts.models import Post, Group, User
-from .serializers import (CommentSerializer, PostSerializer, GroupSerializer,
-                          FollowSerializer, UserSerializer)
-from .permissions import IsAuthorOrReadOnly, IsFollowerOrReadOnly
-
 from django.shortcuts import get_object_or_404
+from django_filters.rest_framework import DjangoFilterBackend
+from posts.models import Group, Post, User
 from rest_framework import filters, viewsets
 from rest_framework.pagination import LimitOffsetPagination
-from django_filters.rest_framework import DjangoFilterBackend
+
+from .permissions import IsAuthorOrReadOnly, IsFollowerOrReadOnly
+from .serializers import (CommentSerializer, FollowSerializer, GroupSerializer,
+                          PostSerializer, UserSerializer)
 
 
 class UserViewSet(viewsets.ReadOnlyModelViewSet):
