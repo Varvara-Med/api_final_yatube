@@ -1,4 +1,4 @@
-from posts.models import Post, Group, User, Follow
+from posts.models import Post, Group, User
 from .serializers import (CommentSerializer, PostSerializer, GroupSerializer,
                           FollowSerializer, UserSerializer)
 from .permissions import IsAuthorOrReadOnly, IsFollowerOrReadOnly
@@ -53,7 +53,7 @@ class CommentViewSet(viewsets.ModelViewSet):
 
 class CreateListViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
 
-                            viewsets.GenericViewSet):
+                        viewsets.GenericViewSet):
     pass
 
 
