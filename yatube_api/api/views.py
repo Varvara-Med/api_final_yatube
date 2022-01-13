@@ -61,7 +61,6 @@ class FollowViewSet(CreateListViewSet):
     serializer_class = FollowSerializer
     permission_classes = (IsFollowerOrReadOnly,)
     filter_backends = (DjangoFilterBackend, filters.SearchFilter)
-    search_fields = ('user', 'following',)
     search_fields = ('user__username', 'following__username',)
 
     def get_queryset(self):
