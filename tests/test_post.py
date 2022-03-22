@@ -68,6 +68,7 @@ class TestPostAPI:
             'Проверьте, что при GET запросе на `/api/v1/posts/` возвращается весь список статей'
         )
 
+        
     @pytest.mark.django_db(transaction=True)
     def test_posts_get_paginated(self, user_client, post, post_2, another_post):
         base_url = '/api/v1/posts/'
