@@ -26,6 +26,7 @@ class TestGroupAPI:
             'Проверьте, что `/api/v1/groups/{group.id}/` при запросе без токена возвращаете статус 200'
         )
 
+        
     @pytest.mark.django_db(transaction=True)
     def test_group_get(self, user_client, post, another_post, group_1, group_2):
         response = user_client.get('/api/v1/groups/')
