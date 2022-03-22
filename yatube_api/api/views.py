@@ -35,6 +35,7 @@ class GroupViewSet(viewsets.ReadOnlyModelViewSet):
 
 
 class CommentViewSet(viewsets.ModelViewSet):
+  """."""
     serializer_class = CommentSerializer
     permission_classes = (IsAuthorOrReadOnly,)
     filter_backends = (DjangoFilterBackend, filters.SearchFilter,)
