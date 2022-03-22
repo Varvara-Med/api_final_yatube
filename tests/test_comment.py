@@ -4,6 +4,7 @@ from posts.models import Comment
 
 class TestCommentAPI:
 
+    
     @pytest.mark.django_db(transaction=True)
     def test_comments_not_authenticated(self, client, post):
         response = client.get(f'/api/v1/posts/{post.id}/comments/')
