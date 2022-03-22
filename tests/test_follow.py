@@ -15,6 +15,7 @@ class TestFollowAPI:
             'Страница `/api/v1/follow/` не может быть обработана вашим сервером, проверьте view-функцию в *views.py*'
         )
 
+        
     @pytest.mark.django_db(transaction=True)
     def test_follow_not_auth(self, client, follow_1, follow_2):
         response = client.get('/api/v1/follow/')
