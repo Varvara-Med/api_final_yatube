@@ -22,6 +22,7 @@ class Migration(migrations.Migration):
                 ('description', models.TextField(verbose_name='Описание группы')),
             ],
         ),
+        
         migrations.CreateModel(
             name='Follow',
             fields=[
