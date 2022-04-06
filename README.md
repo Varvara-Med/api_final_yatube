@@ -27,7 +27,7 @@ pip install -r requirements.txt
 python3 manage.py runserver
 ```
 - Для остановки  dev-сервера нажми Ctrl+C или Ctrl + Break
-- 
+
 ### Примеры запросов к API
 **Get-запрос** на получение списка статей:
 ```
