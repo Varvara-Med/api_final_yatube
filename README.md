@@ -48,4 +48,5 @@ http://127.0.0.1:8000/api/v1/posts/
 ### Автор
 Варвара
 > e-mail: upgradeki@yandex.ru
-> telegram: @Varvara_Medok
+
+telegram: @Varvara_Medok
