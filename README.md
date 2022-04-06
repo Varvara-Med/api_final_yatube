@@ -1,11 +1,12 @@
-Проект «API для Yatube»
-### api_final_project
+# api_final_project
 Данный проект представляет из себя API, построенное на основе Django REST Framework. 
 Это API для блог-платформы Yatube.
 Тут можно писать посты, объединять их в группы, комментировать их и подписываться на авторов.
+
 ### Технологии
-Python 3.7
-Django 2.2.19
+* Python 3.7
+* Django 2.2.19
+* 
 ### Запуск проекта в dev-режиме
 - клонируйте репозиторий и перейдите в него в командной строке
 ```
@@ -26,6 +27,7 @@ pip install -r requirements.txt
 python3 manage.py runserver
 ```
 - Для остановки  dev-сервера нажми Ctrl+C или Ctrl + Break
+- 
 ### Примеры запросов к API
 **Get-запрос** на получение списка статей:
 ```
@@ -46,3 +48,4 @@ http://127.0.0.1:8000/api/v1/posts/
 ### Автор
 Варвара
 > e-mail: upgradeki@yandex.ru
+> telegram: @Varvara_Medok
